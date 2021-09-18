@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_18_231106) do
+ActiveRecord::Schema.define(version: 2021_09_18_231827) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "product_id", null: false
@@ -33,6 +33,23 @@ ActiveRecord::Schema.define(version: 2021_09_18_231106) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_bookmarks_on_product_id"
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "borrowers", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.string "name"
+    t.string "paterno"
+    t.string "materno"
+    t.string "cellphone"
+    t.string "profile_picture"
+    t.string "photo_id"
+    t.string "rfc"
+    t.integer "credit_card"
+    t.string "direccion"
+    t.date "birthday"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "categories", force: :cascade do |t|
