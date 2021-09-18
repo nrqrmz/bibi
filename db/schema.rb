@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_18_230312) do
+ActiveRecord::Schema.define(version: 2021_09_18_230631) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "user_id", null: false
+    t.string "pickup_location"
+    t.integer "review_id", null: false
+    t.integer "price_per_day"
+    t.integer "total_amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_bookings_on_product_id"
+    t.index ["review_id"], name: "index_bookings_on_review_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -88,6 +102,9 @@ ActiveRecord::Schema.define(version: 2021_09_18_230312) do
     t.index ["request_id"], name: "index_users_on_request_id"
   end
 
+  add_foreign_key "bookings", "products"
+  add_foreign_key "bookings", "reviews"
+  add_foreign_key "bookings", "users"
   add_foreign_key "bookmarks", "products"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "products", "reviews", column: "reviews_id"
