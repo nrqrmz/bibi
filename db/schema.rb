@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_18_230003) do
+ActiveRecord::Schema.define(version: 2021_09_18_230312) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 2021_09_18_230003) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["reviews_id"], name: "index_products_on_reviews_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_requests_on_booking_id"
+    t.index ["product_id"], name: "index_requests_on_product_id"
   end
 
   create_table "subcategories", force: :cascade do |t|
@@ -83,6 +92,8 @@ ActiveRecord::Schema.define(version: 2021_09_18_230003) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "products", "reviews", column: "reviews_id"
   add_foreign_key "products", "users"
+  add_foreign_key "requests", "bookings"
+  add_foreign_key "requests", "products"
   add_foreign_key "subcategories", "categories"
   add_foreign_key "users", "requests"
 end
