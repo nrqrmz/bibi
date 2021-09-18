@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_18_231827) do
+ActiveRecord::Schema.define(version: 2021_09_18_232109) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "product_id", null: false
@@ -48,6 +48,18 @@ ActiveRecord::Schema.define(version: 2021_09_18_231827) do
     t.integer "credit_card"
     t.string "direccion"
     t.date "birthday"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "business_name"
+    t.string "rfc"
+    t.string "stores_locations"
+    t.string "contact_number"
+    t.string "whatsapp"
+    t.string "fiscal_address"
+    t.string "business_intro"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
