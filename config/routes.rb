@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'garantia' => 'pages#garantia'
   get 'aviso_de_privacidad' => 'pages#aviso_de_privacidad'
+  get 'preguntas_frecuentes' => 'pages#preguntas_frecuentes'
 
   # product routes
 end
