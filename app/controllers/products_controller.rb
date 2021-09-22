@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @product = Product.new(params[product])
+    @product.save
   end
 
   def show
