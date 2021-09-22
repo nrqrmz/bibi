@@ -1,5 +1,24 @@
 <h1>Our products</h1>
 
-<%= link_to "home", root_path %>
+<h2>nav menu</h2>
+<ul>
+  <li>
+    <%= link_to "home", root_path %>
+  </li>
+  <li>
+    <%= link_to "create a new product", new_product_path %>
+  </li>
+</ul>
 
-<%= link_to "create a new product", new_product_path %>
+<h2>Products</h2>
+<ul>
+  <%= @products.each do |product| %>
+    <li>
+      <%= link_to product, product_path(product) %>
+    </li>
+  <% end %>
+</ul>
+
+
+
+
