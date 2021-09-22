@@ -8,8 +8,10 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(params[product])
+    @product = Product.new(product_params)
     @product.save
+
+    redirect_to product_path(@product)
   end
 
   def show
@@ -23,5 +25,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:product_title, :description, :rating)
   end
 end
