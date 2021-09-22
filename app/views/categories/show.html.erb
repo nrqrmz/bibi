@@ -1,0 +1,11 @@
+<h2><%= @category.category_name %></h2>
+<br>
+<%= link_to "back to categories", categories_path %>
+<br>
+<%= link_to "edit #{@category.category_name}", edit_category_path(@category) %>
+<hr>
+<br>
+<%= link_to "Delete #{@category.category_name}",
+            category_path(@category),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
