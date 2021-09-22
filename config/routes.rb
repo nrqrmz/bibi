@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'terminos_de_servicio' => 'pages#terminos_de_servicio'
 
   # product routes
+  resources :products
 end
