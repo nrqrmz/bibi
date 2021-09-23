@@ -4,3 +4,19 @@
 @import "bootstrap/scss/bootstrap";
 @import "components/index";
 @import "pages/index";
+h1 {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 38px
+}
+
+h2 {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 32px
+}
+
+p {
+    font-family: "Montserrat";
+    font-size: 18px
+}
