@@ -7,12 +7,18 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheets" href="components/footer.css">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+
+    <%=render 'shared/navbar'%>
+
     <%= yield %>
+
+    <%=render 'shared/footer'%>
   </body>
 </html>
