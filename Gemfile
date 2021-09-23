@@ -5,6 +5,7 @@ ruby '2.7.1'
 
 # Gems added specifically for this project
 gem 'simple_form'
+gem 'font-awesome-sass', '~> 5.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
