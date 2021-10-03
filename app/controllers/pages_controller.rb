@@ -10,4 +10,8 @@ class PagesController < ApplicationController
   def preguntas_frecuentes; end
 
   def terminos_de_servicio; end
+
+  def arrendador; end
+
+  def arrendatario; end
 end
