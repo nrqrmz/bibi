@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'aviso_de_privacidad' => 'pages#aviso_de_privacidad'
   get 'preguntas_frecuentes' => 'pages#preguntas_frecuentes'
   get 'terminos_de_servicio' => 'pages#terminos_de_servicio'
+  get 'arrendador' => 'pages#arrendador'
+  get 'arrendatario' => 'pages#arrendatario'
 
   # product routes
   resources :products
